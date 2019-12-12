@@ -10,7 +10,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BottmNavigationActivity extends AppCompatActivity {
+    public  static List<Student> student=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

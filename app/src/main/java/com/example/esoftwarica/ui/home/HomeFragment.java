@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.esoftwarica.BottmNavigationActivity;
 import com.example.esoftwarica.R;
 import com.example.esoftwarica.Student;
 import com.example.esoftwarica.StydentAdapter;
@@ -41,14 +42,22 @@ public class HomeFragment extends Fragment {
         recyclerView=root.findViewById(R.id.recyclerView);
 
         List<Student> StudentList = new ArrayList<>();
-        StudentList.add(new Student("Ishika Pradhan","20","newroad","Female",R.drawable.female,R.drawable.delete));
-        StudentList.add(new Student("Naraya Pradhan","20","newroad","Male",R.drawable.male,R.drawable.delete));
-        StudentList.add(new Student("fjhjfhf","20","newroad","Other",R.drawable.noimage,R.drawable.delete));
+        if(BottmNavigationActivity.student.isEmpty()){
+            BottmNavigationActivity.student.add(new Student("romeo","ktm","male",18));
+             StydentAdapter stydentAdapter=new StydentAdapter(getContext(),BottmNavigationActivity.student);
+            recyclerView.setAdapter(stydentAdapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        StydentAdapter stydentAdapters= new StydentAdapter(StudentList);
-        recyclerView.setAdapter(stydentAdapters);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        }
+        else {
+
+            StydentAdapter stydentAdapter=new StydentAdapter(getContext(),BottmNavigationActivity.student);
+            recyclerView.setAdapter(stydentAdapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        }
         return root;
     }
 }

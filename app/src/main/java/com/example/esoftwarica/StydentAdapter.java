@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +16,8 @@ import java.util.List;
 public class StydentAdapter extends RecyclerView.Adapter<StydentAdapter.StudentViewHolder>{
     Context mContext;
     List<Student> StutentList;
-    public StydentAdapter(List<Student>StudentList){
+    public StydentAdapter( Context mContext,List<Student>StudentList){
+        this.mContext=mContext;
         this.StutentList= StudentList;
     }
 
@@ -28,17 +30,47 @@ public class StydentAdapter extends RecyclerView.Adapter<StydentAdapter.StudentV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
-    Student student=StutentList.get(position);
-    holder.imgperson.setImageResource(student.getImgperson());
+    public void onBindViewHolder(@NonNull StudentViewHolder holder, final int position) {
+    final Student student=StutentList.get(position);
+    holder.imgperson.setImageResource(student.getImgProfileId());
     holder.tvname.setText(student.getName());
-    holder.tvage.setText(student.getAge());
+    holder.tvage.setText(Integer.toString(student.getAge()));
     holder.tvaddress.setText(student.getAddress());
     holder.tvgender.setText(student.getGender());
-    holder.imgdelete.setImageResource(student.getImgdelete());
+    holder.imgdelete.setImageDrawable(mContext.getResources().getDrawable(R.drawable.delete));
+        String gender=student.getGender();
+        if (gender=="male") {
 
-
+            holder.imgperson.setImageResource(R.drawable.male);
         }
+        else if(gender=="female"){
+            holder.imgperson.setImageResource(R.drawable.female);
+        }
+        else {
+            holder.imgperson.setImageDrawable(mContext.getResources().getDrawable(R.drawable.female));
+        }
+
+        holder.imgperson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext,"hi"+student.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.imgperson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Student cont=StutentList.get(position);
+                StutentList.remove(position);
+                notifyItemRemoved(position);
+                Toast.makeText(mContext,"Removed:"+cont.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+    }
 
     @Override
     public int getItemCount() {

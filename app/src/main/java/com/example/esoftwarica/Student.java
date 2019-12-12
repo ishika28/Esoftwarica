@@ -3,67 +3,71 @@ package com.example.esoftwarica;
 public class Student
 {
 
-    private String name;
-    private String age;
-    private String address;
-    private String gender;
-    private int imgperson;
-    private int imgdelete;
-
-    public Student(String name, String age, String address, String gender, int imgperson, int imgdelete) {
-        this.name = name;
-        this.age = age;
-        this.address = address;
-        this.gender = gender;
-        this.imgperson = imgperson;
-        this.imgdelete = imgdelete;
+    public Student(String name, String address, String gender, int age) {
+        Name = name;
+        Address = address;
+        Gender = gender;
+        Age = age;
+        this.imgProfileId = imgProfileId;
+        this.imgRemoveId = imgRemoveId;
     }
 
+    private String Name;
+    private String Address;
+
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
+        Name = name;
     }
 
     public String getAddress() {
-        return address;
+        return Address;
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        Address = address;
     }
 
     public String getGender() {
-        return gender;
+        return Gender;
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        Gender = gender;
     }
 
-    public int getImgperson() {
-        return imgperson;
+    public int getAge() {
+        return Age;
     }
 
-    public void setImgperson(int imgperson) {
-        this.imgperson = imgperson;
+    public void setAge(int age) {
+        Age = age;
     }
 
-    public int getImgdelete() {
-        return imgdelete;
+    public int getImgProfileId() {
+        return imgProfileId;
     }
 
-    public void setImgdelete(int imgdelete) {
-        this.imgdelete = imgdelete;
+    public void setImgProfileId(int imgProfileId) {
+        this.imgProfileId = imgProfileId;
     }
+
+    public int getImgRemoveId() {
+        return imgRemoveId;
+    }
+
+    public void setImgRemoveId(int imgRemoveId) {
+        this.imgRemoveId = imgRemoveId;
+    }
+
+    private String Gender;
+    private int Age;
+    private int imgProfileId;
+    private  int imgRemoveId;
+
+
+
 }
