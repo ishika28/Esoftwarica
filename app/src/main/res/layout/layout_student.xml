@@ -2,70 +2,84 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imgperson"
-        android:layout_width="113dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/male" />
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imgperson"
+            android:layout_width="113dp"
+            android:layout_height="107dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/male" />
 
-    <TextView
-        android:id="@+id/tvname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
-        android:text="name"
-        app:layout_constraintStart_toEndOf="@+id/imgperson"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="44dp"
+            android:text="name"
+            app:layout_constraintStart_toEndOf="@+id/imgperson"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
-        android:text="Age"
-        app:layout_constraintStart_toEndOf="@+id/imgperson"
-        app:layout_constraintTop_toBottomOf="@+id/tvname" />
+        <TextView
+            android:id="@+id/tvage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="24dp"
+            android:text="Age"
+            app:layout_constraintStart_toEndOf="@+id/imgperson"
+            app:layout_constraintTop_toBottomOf="@+id/tvname" />
 
-    <TextView
-        android:id="@+id/tvaddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="60dp"
-        android:text="Addres"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imgperson"
-        app:layout_constraintTop_toBottomOf="@+id/tvage" />
+        <TextView
+            android:id="@+id/tvaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="60dp"
+            android:text="Address"
+            app:layout_constraintEnd_toStartOf="@+id/imgdelete"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toEndOf="@+id/imgperson"
+            app:layout_constraintTop_toBottomOf="@+id/tvage" />
 
-    <TextView
-        android:id="@+id/tvgender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Gender"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.704"
-        app:layout_constraintStart_toEndOf="@+id/tvaddress"
-        app:layout_constraintTop_toBottomOf="@+id/imgdelete" />
+        <TextView
+            android:id="@+id/tvgender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Gender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintStart_toEndOf="@+id/tvaddress"
+            app:layout_constraintTop_toBottomOf="@+id/imgdelete" />
 
-    <ImageButton
-        android:id="@+id/imgdelete"
-        android:layout_width="107dp"
-        android:layout_height="109dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/delete" />
+        <ImageButton
+            android:id="@+id/imgdelete"
+            android:layout_width="28dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/delete" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

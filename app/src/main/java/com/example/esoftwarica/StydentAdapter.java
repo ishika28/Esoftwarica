@@ -15,8 +15,7 @@ import java.util.List;
 public class StydentAdapter extends RecyclerView.Adapter<StydentAdapter.StudentViewHolder>{
     Context mContext;
     List<Student> StutentList;
-    public StydentAdapter(Context mContext,List<Student>StudentList){
-        this.mContext=mContext;
+    public StydentAdapter(List<Student>StudentList){
         this.StutentList= StudentList;
     }
 

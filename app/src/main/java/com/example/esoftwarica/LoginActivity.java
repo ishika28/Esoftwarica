@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.esoftwarica.ui.home.HomeFragment;
+
 public class LoginActivity extends AppCompatActivity {
     private EditText etusername;
     private EditText etpassword;
@@ -30,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (etusername.getText().toString().equals("softwarica")&& etpassword.getText().toString().equals("coventry")){
                     Login();
                     Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
-                    Intent intent= new Intent(LoginActivity.this, MainActivity.class );
+                    Intent intent= new Intent(LoginActivity.this, BottmNavigationActivity.class );
                     startActivity(intent);
                 }
                 else {
